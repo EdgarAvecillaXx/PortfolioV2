@@ -1,26 +1,31 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link, useLocation } from 'react-router-dom';
 
-import NavBar from "./Navbar/NavBar";
-import SocialLinks from "./Social/SocialLinks.jsx";
+import NavBar from './Navbar/NavBar';
+import SocialLinks from './Social/SocialLinks.jsx';
 
-import s from "./header.module.css";
+import s from './header.module.css';
 
 const Header = () => {
+  const path = useLocation().pathname;
   return (
-    <header className={s.header}>
-      <div>
-        <h1>
-          <a href="index.html">Edgar Avecilla</a>
-        </h1>
-        <h2>
-          I'm a passionate <span>Web Developer</span> from Mexico
-        </h2>
-        <NavBar />
-        <SocialLinks />
-      </div>
+    <>
+      <header id={s.header} className={path !== '/' ? s.headerTop : null}>
+        <div className={` container ${s.container}`}>
+          <h1>
+            <Link to='/'>Edgar Avecilla</Link>
+          </h1>
+          {path === '/' && (
+            <h2>
+              I'm a passionate <span>Web Developer</span> from Mexico
+            </h2>
+          )}
+          <NavBar />
+          {path === '/' && <SocialLinks />}
+        </div>
+      </header>
       <Outlet />
-    </header>
+    </>
   );
 };
 

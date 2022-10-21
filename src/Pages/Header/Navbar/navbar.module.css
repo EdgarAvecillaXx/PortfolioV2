@@ -1,0 +1,47 @@
+.navbar {
+  padding: 0;
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  position: relative;
+}
+
+.navbar a + a {
+  margin-left: 30px;
+}
+
+.navbar a, .navbar a:focus {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  transition: 0.3s;
+}
+
+.navbar a i, .navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar a:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: -4px;
+  background-color: cornflowerblue;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar a:hover:before, .navbar .active:before {
+  visibility: visible;
+  width: 1.5em;
+}
+
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+  color: #fff;
+}
