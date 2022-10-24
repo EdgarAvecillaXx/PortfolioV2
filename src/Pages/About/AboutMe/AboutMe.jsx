@@ -1,5 +1,7 @@
 import React from "react";
 import InfoList from "./InfoList";
+import s from './aboutme.module.css';
+
 
 const AboutMe = () => {
   return (

@@ -10,12 +10,8 @@ const MySkills = () => {
       </div>
 
       <div>
-        {mySkills.map(skill => (
-          <SkillElement
-            name={skill}
-            icon={`${skill}Icon`}
-            key={skill + "Skill"}
-          />
+        {mySkills.map(({ name, logo }) => (
+          <SkillElement name={name} icon={logo} key={name + 'Skill'} />
         ))}
       </div>
     </div>

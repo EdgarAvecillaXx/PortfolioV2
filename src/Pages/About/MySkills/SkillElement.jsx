@@ -4,7 +4,9 @@ const SkillElement = ({ icon, name }) => {
   return (
     <div>
       <div>
-        <i>{icon}</i>
+        <i>
+          <img src={icon} alt={name} />
+        </i>
         <h3>{name}</h3>
       </div>
     </div>

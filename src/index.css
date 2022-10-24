@@ -8,7 +8,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url(../src/Assets/computadora.jpg) right no-repeat;
+  background: #040404 url(/public/Assets/computadora.jpg) right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -31,5 +31,16 @@ a{
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
+}
+
+section {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  transition: ease-in-out 0.4s;
+  z-index: 2;
+  top: 100px;
+  bottom: auto;
+  padding-bottom: 45px;
 }
 
